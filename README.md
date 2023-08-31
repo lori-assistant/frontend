@@ -1,6 +1,6 @@
-# chat
+# `ollama-chat`
 
-A new Flutter project.
+This repository contains a cross-platform GUI client for the [Ollama server](https://ollama.ai/).
 
 ## Getting Started
 
