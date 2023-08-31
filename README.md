@@ -1,5 +1,7 @@
 # `ollama-chat`
 
+<img width="1624" alt="Screenshot 2023-09-01 at 00 25 00" src="https://github.com/spectrachrome/ollama-chat/assets/94269527/e7e25c70-0d39-4bb4-acf1-0e951412c4a3">
+
 This repository contains a cross-platform GUI client for the [Ollama server](https://ollama.ai/).
 
 ## Getting Started
