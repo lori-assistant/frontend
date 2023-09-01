@@ -28,7 +28,7 @@ class _ChatInterfaceState extends State<ChatInterface> {
       Uri.parse('http://localhost:11434/api/generate'),
     )
       ..headers['Content-Type'] = 'application/json'
-      ..body = '{"model":"wizard-vicuna-uncensored:13b-q4_0", "prompt": "$userMessage"}';
+      ..body = '{"model":"lori-v3", "prompt": "$userMessage"}';
 
     try {
       final response = await request.send();
@@ -94,7 +94,9 @@ class _ChatInterfaceState extends State<ChatInterface> {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          color: Color(0xFFCAE6F1),
+          color: MediaQuery.of(context).platformBrightness == Brightness.dark
+            ? Color(0xFF03212D)
+            : Color(0xFFCAE6F1),
         ),
         child: Column(
           children: [
