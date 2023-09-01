@@ -16,6 +16,28 @@ class _ChatInterfaceState extends State<ChatInterface> {
   String _aiPartialMessage = "Processing...";
   bool _firstTokenReceived = false;  // Track if the first token has been received
 
+  @override
+  void initState()
+  {
+    super.initState();
+
+    // Add a user mock message
+    _messageWidgets.add(
+      _buildUserMessageWidget("Hello, can you provide me with some information?")
+    );
+
+    // Add an AI mock response with Lorem Ipsum text
+    _messageWidgets.add(
+      _buildAiMessageWidget(
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Sed sit amet facilisis urna. Praesent ac gravida libero. "
+        "Donec non tortor sit amet. Vivamus mattis pharetra tellus sed placerat. "
+        "Duis magna purus, elementum eu placerat eu, egestas vitae felis."
+      )
+    );
+  }
+
+
   Future<void> sendRequest() async {
     String userMessage = _inputTextController.text;
     setState(() {
