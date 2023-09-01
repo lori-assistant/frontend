@@ -64,8 +64,8 @@ flutter:
 
   assets:
     - assets/icons/chatbot.svg
-    - assets/icons/line_awesome/user.svg
-    - assets/icons/line_awesome/user-circle.svg
+    - assets/icons/chatbot_squircle.svg
+    - assets/icons/user_squircle.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
