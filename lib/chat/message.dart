@@ -1,4 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../markdown.dart';
 
 class Message extends StatelessWidget {
   // Typically, you might also include some final variables here to be passed in when the widget is instantiated.
@@ -36,35 +41,36 @@ class Message extends StatelessWidget {
                       child: Row(
                         children: [
                           Container(
-                            width: 40,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(9),
-                              color: author == MessageAuthor.ai
-                                ? Color(0xFF379A5D)
-                                : Color(0xFF37839A)
-                            ),
-                            child: Icon(
-                              author == MessageAuthor.ai
-                                ? Icons.android
-                                : Icons.person,
-                              color: Color(0x44000000),
+                            width: 42,
+                            height: 42,
+                            child: SvgPicture.asset(
+                              'assets/icons/${author == MessageAuthor.ai ? 'chatbot' : 'user'}_squircle.svg',
+                              semanticsLabel: 'Chatbot Icon',
                             ),
                           ),
 
-                          SizedBox(width: 12.0),
+                          SizedBox(width: 15.0),
 
                           Text(
                             author == MessageAuthor.ai ? "Lori" : "User",
-                            style: TextStyle(fontWeight: FontWeight.w500),
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: author == MessageAuthor.ai ? Color(0xFF379A5D) : Color(0xFFEEEEEE),
+                              fontVariations: [
+                                FontVariation(
+                                  'wght',
+                                  ((FontWeight.w600.index + 1) * 100).toDouble(),
+                                )
+                              ],
+                            ),
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height: 12.0),
+                    // SizedBox(height: 24.0),
                     Container(
                       // constraints: BoxConstraints(maxWidth: 700),
-                      child: SelectableText(text),
+                      child: MarkdownRenderer(source: text),
                       width: MediaQuery.of(context).size.width > 768 ? 768 : double.infinity,
                     ),
                   ],
