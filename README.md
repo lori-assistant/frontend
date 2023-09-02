@@ -2,7 +2,12 @@
 
 <img width="1622" alt="Screenshot 2023-09-02 at 04 22 00" src="https://github.com/spectrachrome/ollama-chat/assets/94269527/b22379a2-3dad-4dba-98d3-1a5b6bd08569">
 
-This repository contains a cross-platform GUI client for the [Ollama server](https://ollama.ai/).
+This repository contains a work-in-progress cross-platform GUI client for the [Ollama server](https://ollama.ai/).
+
+## Features
+
+* Syntax Highlighting
+* Markdown Rendering
 
 ## Getting Started
 
