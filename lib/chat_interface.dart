@@ -17,7 +17,7 @@ class _ChatInterfaceState extends State<ChatInterface> {
   String? _errorMessage;
   String _aiPartialMessage = "Processing...";
   bool _firstTokenReceived = false;  // Track if the first token has been received
-/*
+
   @override
   void initState()
   {
@@ -36,6 +36,13 @@ class _ChatInterfaceState extends State<ChatInterface> {
 
 The Fibonacci sequence is a series of numbers where a number is the sum of the two preceding ones. It usually starts with 0 and 1. In mathematical terms, the sequence `F(n)` is defined by the recurrence relation:
 
+\[ F(n) = F(n-1) + F(n-2) \]
+
+## Python Implementation
+### Python Implementation
+#### Python Implementation
+##### Python Implementation
+
 Below is a simple Python function that calculates the Fibonacci number for a given `n`:
 
 ```python
@@ -50,15 +57,70 @@ for i in range(10):
     print(fibonacci(i))
 ```
 
-This function uses a recursive approach to compute the Fibonacci number. When called with `n`, it returns the `n-th` number in the Fibonacci sequence. The function works by breaking down the problem into two smaller sub-problems: `fibonacci(n-1)` and `fibonacci(n-2)`. These sub-problems are solved recursively until reaching the base cases of `n=0` or `n=1`.
+## JavaScript Implementation
 
-However, it's worth noting that this recursive approach can be inefficient for large values of `n` due to the repeated computation of the same Fibonacci numbers multiple times. There are more efficient algorithms, like the iterative approach or using memoization, to compute Fibonacci numbers in a more optimized manner.
+Here's how you can implement the Fibonacci sequence in JavaScript:
+
+```javascript
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Test the function
+for (let i = 0; i < 10; i++) {
+    console.log(fibonacci(i));
+}
+```
+
+## Java Implementation
+
+And, for those who prefer Java:
+
+```java
+public class Fibonacci {
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(fibonacci(i));
+        }
+    }
+}
+```
+
+## Notes
+
+- This function uses a **recursive approach** to compute the Fibonacci number.
+- When called with `n`, it returns the `n-th` number in the Fibonacci sequence.
+- The function works by breaking down the problem into two smaller sub-problems: `fibonacci(n-1)` and `fibonacci(n-2)`.
+- These sub-problems are solved recursively until reaching the base cases of `n=0` or `n=1`.
+
+> **Warning:** It's worth noting that this recursive approach can be inefficient for large values of `n` due to the repeated computation of the same Fibonacci numbers multiple times. There are more efficient algorithms, like the iterative approach or using memoization, to compute Fibonacci numbers in a more optimized manner.
+
+## Further Reading
+
+For more details on the Fibonacci sequence and its properties, check out:
+
+1. [Wikipedia's Fibonacci Number page](https://en.wikipedia.org/wiki/Fibonacci_number)
+2. [MathWorld's Fibonacci Number entry](http://mathworld.wolfram.com/FibonacciNumber.html)
+3. [A video tutorial on Fibonacci sequence](https://www.youtube.com/watch?v=sj8Sg8qnjOg)
+
+---
+
+_Last updated: September 3, 2023_
 
         """
       )
     );
   }
-*/
 
   Future<void> sendRequest() async {
     String userMessage = _inputTextController.text;
@@ -69,7 +131,7 @@ However, it's worth noting that this recursive approach can be inefficient for l
 
     var request = http.Request(
       'POST',
-      Uri.parse('http://localhost:11434/api/generate'),
+      Uri.parse('http://localhost:3000/api/generate'),
     )
       ..headers['Content-Type'] = 'application/json'
       ..body = '{"model":"lori-v4", "prompt": "$userMessage"}';
@@ -77,6 +139,7 @@ However, it's worth noting that this recursive approach can be inefficient for l
     try {
       final response = await request.send();
       response.stream.transform(utf8.decoder).listen((data) {
+        print(data);
         Map<String, dynamic> jsonData = json.decode(data);
         String token = jsonData['response'] ?? "";
         setState(() {
