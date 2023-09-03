@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 // Brand Color: Color(0xFF379A5D)
 
-class AppColors {
+class CustomTheme {
   // Common colors
   static const brandColor = Color(0xFF379A5D);
   static const primaryColor = AppColors.brandColor;
