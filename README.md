@@ -1,8 +1,10 @@
-# `ollama-chat`
+![lori-banner](https://github.com/spectrachrome/ollama-chat/assets/94269527/9596ca59-1147-492f-900c-eb647325bba2)
+
+# `lori_frontend`
+
+A work-in-progress cross-platform GUI client which accesses the HTTP server of the `lori_server` crate to interface with [Ollama server](https://ollama.ai/) while providing the ability to inject information into the system programmatically with a plugin system, for example to do a web search and integrating the results to provide up-to-date information if deemed necessary or to implement mechanisms for long-term memory for the chatbot.
 
 <img width="1622" alt="Screenshot 2023-09-02 at 04 22 00" src="https://github.com/spectrachrome/ollama-chat/assets/94269527/b22379a2-3dad-4dba-98d3-1a5b6bd08569">
-
-This repository contains a work-in-progress cross-platform GUI client for the [Ollama server](https://ollama.ai/).
 
 ## Features
 
