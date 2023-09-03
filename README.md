@@ -1,6 +1,6 @@
 ![lori-banner](https://github.com/spectrachrome/ollama-chat/assets/94269527/9596ca59-1147-492f-900c-eb647325bba2)
 
-A work-in-progress cross-platform GUI client which accesses the HTTP server of the `lori_server` crate to interface with a local Large Language Model using the [Ollama server](https://ollama.ai/).
+A work-in-progress cross-platform GUI client which accesses the HTTP server of the `lori_server` crate to interface with a local Large Language Model using the [Ollama](https://ollama.ai/). The intermediate server allows us to implement interesting, advanced functionality like search engine integration and long-term memory mechanisms in a plugin system.
 
 <!--
 Furthermore providing the ability to inject information into the system programmatically with a plugin system, for example to do a web search and integrating the results to provide up-to-date information if deemed necessary or to implement mechanisms for long-term memory for the chatbot.
