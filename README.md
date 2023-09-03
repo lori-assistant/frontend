@@ -6,7 +6,22 @@ This repository contains a work-in-progress cross-platform GUI client for the [O
 
 ## Features
 
-* Syntax Highlighting
+### Markdown Rendering
+
+- [x] Blockquotes
+- [x] Code blocks with syntax highlighting
+- [x] Headings
+- [x] Horizontal lines
+- [x] Lists (ordered and unordered)
+- [ ] Inline code formatting
+- [ ] Links
+- [ ] Images
+- [ ] Tables
+- [ ] Emphasis (bold, italic)
+- [ ] Strikethrough
+
+The chat interface supports syntax highlighting for fenced code blocks, and soon also for inline code. You can define a language for the code block by putting a string right after the first set of triple backticks, similar to the syntax found in GitHub Flavored Markdown and other common Markdown parsers.
+
 * Markdown Rendering
 
 ## Getting Started
