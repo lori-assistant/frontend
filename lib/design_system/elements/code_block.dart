@@ -15,7 +15,8 @@ class LCodeBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 9.0),
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
       margin: EdgeInsets.symmetric(horizontal: 0.0, vertical: 24.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(9.0),
@@ -24,7 +25,7 @@ class LCodeBlock extends StatelessWidget {
           : Colors.white,
       ),
       child: HighlightView(
-        codeContent.trimRight(),
+        content.trimRight(),
         language: language ?? 'plaintext',
         theme: customTheme,
         textStyle: TextStyle(fontFamily: 'Inconsolata', fontSize: 18),
